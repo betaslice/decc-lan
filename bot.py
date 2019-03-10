@@ -26,7 +26,7 @@ async def eight_ball(context):
         'Possibly.',
         'The answer finna be yes.',
     ]
-    await client.say(random.choice(possible_responses) + ", " + context.message.author.mention)
+    await client.say(random.choice(possible_responses))
 
 
 @client.command()
@@ -34,10 +34,12 @@ async def square(number):
     squared_value = int(number) * int(number)
     await client.say(str(number) + " squared is " + str(squared_value))
 
+#Game Name
+gamelist = ["3D Space Pinball", "Minesweeper", "Windows 98", "with pathetic life forms"]
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=Game(name="with pathetic carbon-based life forms"))
+    await client.change_presence(game=Game(name=random.choice(gamelist)))
     print("Logged in as " + client.user.name)
 
 
