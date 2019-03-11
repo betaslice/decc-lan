@@ -8,7 +8,7 @@ from discord.ext.commands import Bot
 
 #Bot Setup
 BOT_PREFIX = ("?", "!")
-TOKEN = "NTU0Mzc2NDMxOTA4NTUyNzI0.D2b5RA.h6WxaqKJKVLylaiKj0C7QJdRw0c"
+TOKEN = process.env.token
 
 client = Bot(command_prefix=BOT_PREFIX)
 
