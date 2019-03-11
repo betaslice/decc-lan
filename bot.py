@@ -5,10 +5,11 @@ import aiohttp
 import json
 from discord import Game
 from discord.ext.commands import Bot
+import os
 
 #Bot Setup
 BOT_PREFIX = ("?", "!")
-TOKEN = process.env.token
+TOKEN = os.environ['TOKEN']
 
 client = Bot(command_prefix=BOT_PREFIX)
 
