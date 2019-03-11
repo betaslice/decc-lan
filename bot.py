@@ -30,9 +30,9 @@ async def eight_ball(context):
     await client.say(random.choice(possible_responses))
 
 @client.command(name='rickroll',
-                description="Links to the music video for Never Gonna Give You Up."
-                brief="Rickrolls chat."
-                aliases=['rickastley', 'rick']
+                description="Links to the music video for Never Gonna Give You Up.",
+                brief="Rickrolls chat.",
+                aliases=['rickastley', 'rick'],
                 pass_context=True)
 async def rick_roll(context):
     await client.say("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
