@@ -37,6 +37,14 @@ async def eight_ball(context):
 async def rick_roll(context):
     await client.say("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
+@client.command(name='protegent',
+                description="Links to the Protegent Antivirus Rap",
+                brief="Protegent Antivirus Rap",
+                aliases=['proto','rap','antivirus'],
+                pass_context=True)
+async def proto_rap(context):
+    await client.say("https://www.youtube.com/watch?v=PIp06sdFHLM")
+
 
 @client.command()
 async def square(number):
@@ -59,6 +67,7 @@ async def list_servers():
         for server in client.servers:
             print(server.name)
         await asyncio.sleep(600)
+
 
 #Bot Execution
 client.loop.create_task(list_servers())
