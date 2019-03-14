@@ -58,7 +58,13 @@ gamelist = ["3D Space Pinball", "Minesweeper", "Windows 98", "with pathetic life
 async def on_ready():
     await client.change_presence(game=Game(name=random.choice(gamelist)))
     print("Logged in as " + client.user.name)
-
+    
+async def on_message(message):
+    if 'r/' in message.content:
+        words = message.content.split()
+        for word in words:
+            if 'r/' in word:
+                await client.say('https://reddit.com/' + word)
 
 async def list_servers():
     await client.wait_until_ready()
