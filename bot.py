@@ -60,7 +60,7 @@ async def country_roads(context):
                 await client.say('https://www.youtube.com/watch?v=IObnt8UFjVA')
 
 @client.command(name="vaporwave",
-                description"",
+                description="",
                 brief="",
                 aliases=[],
                 pass_context=True)
