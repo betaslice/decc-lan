@@ -6,6 +6,7 @@ import json
 from discord import Game
 from discord.ext.commands import Bot
 import os
+import datetime
 
 #Bot Setup
 BOT_PREFIX = ("?", "!")
@@ -60,7 +61,25 @@ async def country_roads(context):
                 pass_context=True)
 async def vapor_wave(context):
     await client.say('https://www.youtube.com/watch?v=jjiq8VogmIk')
-                
+
+@client.command(name="time",
+                description="",
+                brief="say the time",
+                aliases=[],
+                pass_context=true)
+async def tell_time(context):
+    myTime = datetime.now()
+    hour = myTime.hour
+    minute = myTime.minute
+    if not (context=='24'):
+        ampm = 'AM'
+        if(hour > 11):
+            ampm = 'PM'
+            if(hour > 12):
+                hour -= 12
+         await client.say(str(hour) + ':' + str(minute) + ' ' + ampm)
+    else:
+        await client.say(str(hour) + ':' + str(minute)        
 
 #Game Name
 gamelist = ["3D Space Pinball", "Minesweeper", "Windows 98", "with pathetic life forms"]
