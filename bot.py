@@ -45,12 +45,6 @@ async def rick_roll(context):
 async def proto_rap(context):
     await client.say("https://www.youtube.com/watch?v=PIp06sdFHLM")
 
-
-@client.command()
-async def square(number):
-    squared_value = int(number) * int(number)
-    await client.say(str(number) + " squared is " + str(squared_value))
-
 @client.command(name="countryroads",
                 description="take me home",
                 brief="take me home",
