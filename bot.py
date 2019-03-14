@@ -51,6 +51,15 @@ async def square(number):
     squared_value = int(number) * int(number)
     await client.say(str(number) + " squared is " + str(squared_value))
 
+@client.command(name="destroyhumanity"
+                description="you really don't want to use this. ever"
+                brief="srsly dont."
+                aliases=[]
+                pass_context=True
+async def destroy_humanity(context):
+                await client.say("/tts r/r/DU62JnRQHQpmmEU1kcN8crfzJIstKaMn5P2ooLSiF5A2RdZfdKjBgYX0ZBlJ1Fike4v30JEBY7PTHiSsXK93HTALNO5r3lk4KXMFMQCnJ5QL4cJlS71CUdzl0jC6ELRgCHIgf9LwHE3wwsYZa6e0stCH4q2ripKs8O84FfKUq6Zc28WBoQtmlxXWE2o3BpmDsB0bKtXrF1AKwC5pdnzBZZZzyN1T8oH51fLkJpGnsXHcosXJr6ACNdP5qc8ubeQAOZtxLiKtrOr9fGle4sR7jk20yrATbyniyzQTOPbGcRBChzRZiBK8WVrK0XYS0yG1y4tP4jfYwg4CtlBdl55bXr2J1g")
+                
+
 #Game Name
 gamelist = ["3D Space Pinball", "Minesweeper", "Windows 98", "with pathetic life forms"]
 
