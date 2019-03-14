@@ -9,7 +9,7 @@ import os
 
 #Bot Setup
 BOT_PREFIX = ("?", "!")
-TOKEN = os.environ['TOKEN']
+TOKEN = 'NTU0Mzc2NDMxOTA4NTUyNzI0.D2tf6A.RaKY7rRV6Rr0sVHxmcyg2tCdtmc'
 
 client = Bot(command_prefix=BOT_PREFIX)
 
@@ -55,16 +55,20 @@ async def square(number):
 gamelist = ["3D Space Pinball", "Minesweeper", "Windows 98", "with pathetic life forms"]
 
 @client.event
+async def on_message(message):
+    await client.process_commands(message)
+    if message.author == client.user:
+        return
+    if 'r/' in message.content:
+        newmessage = message.content.split()
+        for word in newmessage:
+                if 'r/' in word:
+                    msg = ('https://reddit.com/' + word).format(message)
+                    await client.send_message(message.channel, msg)
+                    
 async def on_ready():
     await client.change_presence(game=Game(name=random.choice(gamelist)))
     print("Logged in as " + client.user.name)
-    
-async def on_message(message):
-    if 'r/' in message.content:
-        words = message.content.split()
-        for word in words:
-            if 'r/' in word:
-                await client.say('https://reddit.com/' + word)
 
 async def list_servers():
     await client.wait_until_ready()
@@ -73,7 +77,6 @@ async def list_servers():
         for server in client.servers:
             print(server.name)
         await asyncio.sleep(600)
-
 
 #Bot Execution
 client.loop.create_task(list_servers())
